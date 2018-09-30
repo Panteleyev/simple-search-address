@@ -7,6 +7,71 @@
  */
 module.exports = {
   /**
+   * Геттер данных геолокации с учетом запроса "Санкт". Имитация получения данных от Google Map.
+   * @param {number} variant - номер для имиатции получения разного значения геолокации. В качестве значения может
+   * выступать номер выбранной подсказки от текстового поля
+   * @returns {{results: *[], status: string}}
+   */
+  getLocalGeo: variant => {
+    const differenceLatIng = 2 * variant; // for imitation difference in offline mode
+
+    return {
+      'results': [
+        {
+          'address_components': [
+            {
+              'long_name': 'Санкт-Петербург',
+              'short_name': 'СПБ',
+              'types': ['locality', 'political']
+            },
+            {
+              'long_name': 'Санкт-Петербург',
+              'short_name': 'Санкт-Петербург',
+              'types': ['administrative_area_level_2', 'political']
+            },
+            {
+              'long_name': 'Россия',
+              'short_name': 'RU',
+              'types': ['country', 'political']
+            }
+          ],
+          'formatted_address': 'Санкт-Петербург, Россия',
+          'geometry': {
+            'bounds': {
+              'northeast': {
+                'lat': 60.233527 + differenceLatIng,
+                'lng': 30.7349362 + differenceLatIng
+              },
+              'southwest': {
+                'lat': 59.6468681 + differenceLatIng,
+                'lng': 29.4464432 + differenceLatIng
+              }
+            },
+            'location': {
+              'lat': 59.9342802 + differenceLatIng,
+              'lng': 30.3350986 + differenceLatIng
+            },
+            'location_type': 'APPROXIMATE',
+            'viewport': {
+              'northeast': {
+                'lat': 60.233527 + differenceLatIng,
+                'lng': 30.7349362 + differenceLatIng
+              },
+              'southwest': {
+                'lat': 59.6468681 + differenceLatIng,
+                'lng': 29.4464432 + differenceLatIng
+              }
+            }
+          },
+          'place_id': 'ChIJ7WVKx4w3lkYR_46Eqz9nx20',
+          'types': ['locality', 'political']
+        }
+      ],
+      'status': 'OK'
+    }
+  },
+
+  /**
    * Геттер списка подсказок с учетом запроса "Санкт". Имитация получения подсказок от Google Map
    * @returns {{predictions: *[], status: string}}
    */

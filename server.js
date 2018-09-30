@@ -3,8 +3,8 @@
  */
 const express = require('express');
 const path = require('path');
-const {CLIENT_API_KEY} = require('./src/app/common/settings');
-const {getLocalPlaces} = require('./src/app/common/data');
+const {CLIENT_API_KEY} = require('./src/app/common/js/settings');
+const {getLocalPlaces} = require('./src/app/common/js/data');
 const googleMapsClient = require('@google/maps').createClient({
   key: CLIENT_API_KEY,
   timeout: 5000

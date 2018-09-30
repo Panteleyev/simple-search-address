@@ -1,0 +1,64 @@
+// миксины
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@mixin background-opacity($color, $opacity: 0.5) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+@mixin keyframe($animation_name) {
+  @-webkit-keyframes #{$animation_name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation_name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation_name} {
+    @content;
+  }
+
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}
+
+@mixin animation($duration, $animation, $iteration-count, $direction: forward) {
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-direction: $direction;
+  -webkit-animation-iteration-count: $iteration-count;
+
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-direction: $direction;
+  -moz-animation-iteration-count: $iteration-count;
+
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-direction: $direction;
+  animation-iteration-count: $iteration-count;
+}

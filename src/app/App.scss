@@ -1,0 +1,64 @@
+@import "common/styles/settings";
+@import "common/styles/mixins";
+
+.App {
+  height: 100%;
+  width: 100%;
+  display: table;
+  background-color: $content-bg-color;
+  overflow: hidden;
+
+  * {
+    font-family: $font-family;
+  }
+
+  .header,
+  .search-box,
+  .map-box {
+    display: table-row;
+
+    & > .wrapper {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .header {
+    height: 150px;
+    text-align: center;
+    background-color: $header-bg-color;
+    padding: 20px;
+    color: $header-font-color;
+
+    .logo {
+      animation: App-logo-spin infinite 20s linear;
+      height: 80px;
+    }
+
+    .title {
+      font-size: 1.5em;
+
+      &.demo:after {
+        content: "demo";
+        background-color: $header-font-color;
+        color: $header-bg-color;
+        padding: 0 4px;
+        margin-left: 11px;
+      }
+    }
+
+    @include keyframe(App-logo-spin){
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .search-box {
+    height: 70px;
+    background-color: $under-header-bg-color;
+  }
+}

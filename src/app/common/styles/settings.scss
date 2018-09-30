@@ -1,0 +1,36 @@
+// Основные настройки стиля
+
+// Шапка
+$header-bg-color: #222;
+$header-font-color: white;
+
+// Контент
+$content-bg-color: white;
+$content-font-color: #222;
+
+// Подшапка
+$under-header-bg-color: #ffdfab;
+$under-header-font-color: $content-font-color;
+
+// Сообщение об ошибке
+$msg-bg-color: #ff7813;
+$msg-font-color: $under-header-bg-color;
+
+// Шрифты
+$font-size: 16px;
+$font-family: 'Open Sans', sans-serif;
+
+// Остальные настройики
+$placeholder-color: #b7b7b7;
+$border-radius: 5px;
+$border-width: 1px;
+
+$interactive-elements-padding-vertical: 5px;
+$interactive-elements-padding-horizontal: 7px;
+$interactive-element-disabled-bg-opacity: 0.1;
+$interactive-element-bg-opacity: 0.8;
+$interactive-element-font-color: white;
+$interactive-element-highlighted-bg-color: #FFBB01;
+$interactive-element-highlighted-font-color: #764f01;
+
+$search-box-elements-height: 30px;

@@ -1,0 +1,86 @@
+@import "../common/styles/settings";
+@import "../common/styles/mixins";
+
+$font-color: $interactive-element-font-color;
+$border-color: $header-bg-color;
+$border-radius: $border-radius;
+$input-border-width: $border-width;
+$bg-opacity: $interactive-element-bg-opacity;
+$padding-vertical: $interactive-elements-padding-vertical;
+$padding-horizontal: $interactive-elements-padding-horizontal;
+$input-height: $search-box-elements-height;
+$hover-bg-color: $interactive-element-highlighted-bg-color;
+$hover-font-color: $interactive-element-highlighted-font-color;
+$input-width: 190px;
+
+.container {
+  position: relative;
+}
+
+.input {
+  width: $input-width;
+  height: $input-height;
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  border: $input-border-width solid $border-color;
+  border-radius: $border-radius;
+  -webkit-appearance: none;
+  color: $under-header-font-color;
+  background-color: $content-bg-color;
+
+  @include placeholder {
+    color: $placeholder-color;
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+.inputFocused {
+  outline: none;
+}
+
+.inputOpen {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.suggestionsContainer {
+  display: none;
+}
+
+.suggestionsContainerOpen {
+  display: block;
+  position: absolute;
+  top: $input-height + 2 * ($padding-vertical + $input-border-width);
+  width: $input-width + 2 * $padding-horizontal;
+  border: $input-border-width solid $border-color;
+  @include background-opacity($header-bg-color, $bg-opacity);
+  font-size: $font-size;
+  color: $font-color;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.suggestionsList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.suggestion {
+  cursor: pointer;
+  padding: $padding-vertical $padding-horizontal;
+}
+
+.suggestionHighlighted {
+  background-color: $hover-bg-color;
+  color: $hover-font-color;
+}
+
+.sectionContainerFirst {
+  border-top: 0;
+}

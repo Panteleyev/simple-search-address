@@ -1,0 +1,73 @@
+@import "../common/styles/settings";
+@import "../common/styles/mixins";
+
+$input-height: $search-box-elements-height;
+$border-width: $border-width;
+$font-color: $interactive-element-font-color;
+$padding-horizontal: $interactive-elements-padding-horizontal;
+$padding-vertical: $interactive-elements-padding-vertical;
+$opacity: $interactive-element-bg-opacity;
+$disabled-opacity: $interactive-element-disabled-bg-opacity;
+$hover-bg-color: $interactive-element-highlighted-bg-color;
+$hover-font-color: $interactive-element-highlighted-font-color;
+$margin-left: 5px;
+
+.search-box {
+  display: table;
+  height: 1px;
+  margin: 0 auto;
+  position: relative;
+
+  .cell {
+    display: table-cell;
+
+    input[type="button"] {
+      height: $input-height + 2 * ($padding-vertical + $border-width);
+      font-size: $font-size;
+      color: rgba($font-color, 0.1);
+      margin-left: $margin-left;
+      padding-left: $padding-horizontal;
+      padding-right: $padding-horizontal;
+      border-radius: $border-radius;
+      outline: none;
+      border: $border-width solid rgba($header-bg-color, $disabled-opacity);
+      @include background-opacity($header-bg-color, $disabled-opacity);
+
+      &:not([disabled]) {
+        @include background-opacity($header-bg-color, $opacity);
+        border-color: rgba($header-bg-color, 1) !important;
+        color: $font-color;
+
+        &:hover {
+          background-color: $hover-bg-color;
+          color: $hover-font-color;
+        }
+      }
+    }
+  }
+
+  .err-msg {
+    display: none;
+    color: $msg-font-color;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    padding: $padding-vertical $padding-horizontal;
+    margin-left: $margin-left;
+    height: $input-height + 2 * $border-width;
+    line-height: $input-height + 2 * $border-width;
+    border-radius: $border-radius;
+
+    &.show {
+      display: block;
+      @include animation(2s, blink2, infinite, linear);
+      @include keyframe(blink2) {
+        100% {
+          background-color: $msg-bg-color;
+          color: white;
+        }
+      }
+    ;
+    }
+  }
+}
