@@ -1,5 +1,5 @@
 /**
- * Клиентская часть map-project
+ * Клиентская часть
  */
 import React from 'react';
 import ReactDOM from 'react-dom';

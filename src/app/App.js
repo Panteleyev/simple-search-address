@@ -198,7 +198,7 @@ class App extends React.PureComponent {
           <h1 className={classNames({
             [styles.title]: true,
             [styles.demo]: IS_DEMO_MODE
-          })}>Welcome to Map project</h1>
+          })}>Welcome to Simple search address</h1>
         </header>
         <div className={styles['search-box']}>
           <div className={styles.wrapper}>
