@@ -1,5 +1,5 @@
 /**
- * Главный компонент приложения
+ * Р“Р»Р°РІРЅС‹Р№ РєРѕРјРїРѕРЅРµРЅС‚ РїСЂРёР»РѕР¶РµРЅРёСЏ
  */
 import React, { Component } from 'react';
 import logo from '../logo.svg';
