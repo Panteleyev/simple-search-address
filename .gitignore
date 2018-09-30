@@ -128,3 +128,4 @@ yarn-error.log*
 /package-lock.json
 /**/src/**/*.css*
 /.idea
+/public/*.css.*
