@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'production') {
 app.get('/maps/api/places/json', (req, res) => {
   if (req.query.mode != 1) { // is NOT for public mode, for TEST
     res.send(getLocalPlaces());
-    console.log(req.query.mode + 'query: [' + req.query.value + '] | mode: [DEMO] | result: [OK]');
+    console.log('query: [' + req.query.value + '] | mode: [DEMO] | result: [OK]');
   } else { // is for public mode, NOT TEST
     googleMapsClient.placesQueryAutoComplete({
       input: req.query.value,
