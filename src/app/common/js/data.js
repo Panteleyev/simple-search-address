@@ -3,7 +3,7 @@
 /**
  * Библиотека JS
  *
- * @type {{getLocalGeo: module.exports.getLocalGeo, getLocalPlaces: module.exports.getLocalPlaces, CLIENT_API_KEY: string}}
+ * @type {{getLocalGeo: function(number), getLocalPlaces: function(): {predictions: *[], status: string}}}
  */
 module.exports = {
   /**

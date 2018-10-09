@@ -3,7 +3,7 @@
 /**
  * Настройка приложения
  *
- * @type {{IS_DEMO_MODE: boolean, HINT_COUNT: number}}
+ * @type {{CLIENT_API_KEY: string, IS_DEMO_MODE: boolean, HINT_MAX_COUNT: number}}
  */
 module.exports = {
   /**
@@ -16,13 +16,11 @@ module.exports = {
    * (!) В случае, если приложение не в демо-режиме, то могут быть ограничения с квотой применения API.
    * В ознакомительных целях рекомендуется demo режим (значение false). В demo режиме данные геолокации
    * будут браться с getLocalGeo
-   * @type {boolean}
    */
   IS_DEMO_MODE: true,
 
   /**
    * Количество подсказок в выпадающем списке
-   * @type {number}
    */
   HINT_MAX_COUNT: 6,
 };
